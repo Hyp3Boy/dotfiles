@@ -1,0 +1,5 @@
+# Ignorar archivos de contraseñas
+*.secret
+
+# Ignorar cachés de aplicaciones
+.cache/
