@@ -3,3 +3,5 @@
 
 # Ignorar cachés de aplicaciones
 .cache/
+
+/Users/lenin.chavez/.config/github-copilot/
