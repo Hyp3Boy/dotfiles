@@ -51,12 +51,11 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 lspconfig["clangd"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-capabilities.offsetEncoding == { "utf-16" },
+	capabilities.offsetEncoding == { "utf-16" },
 	cmd = {
 		"/usr/bin/clangd",
 		"-offset-encoding=utf-16",
 	},
-
 })
 
 -- configure LaTeX server
@@ -65,10 +64,6 @@ lspconfig["texlab"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig["ltex"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
 -- configure python server
 lspconfig["ruff_lsp"].setup({
 	capabilities = capabilities,

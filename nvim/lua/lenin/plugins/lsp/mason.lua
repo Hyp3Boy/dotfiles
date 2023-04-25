@@ -28,7 +28,6 @@ mason_lspconfig.setup({
 		"tailwindcss",
 		"lua_ls",
 		"texlab",
-		"ltex",
 		"clangd",
 		"ruff_lsp",
 	},
