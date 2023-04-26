@@ -23,6 +23,7 @@ nvimtree.setup({
 			},
 		},
 	},
+
 	-- Automatically close nvim-tree when file is opened
 	-- default is false
 	-- disable window_picker for
@@ -30,6 +31,7 @@ nvimtree.setup({
 	-- window splits
 	actions = {
 		open_file = {
+			quit_on_open = true,
 			window_picker = {
 				enable = false,
 			},
