@@ -23,6 +23,22 @@ null_ls.setup({
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
 		formatting.latexindent, -- latex formatter
+		formatting.black, -- python formatter
+		diagnostics.ruff.with({
+			command = "ruff",
+			args = { "--no-color" },
+			sourceName = "ruff",
+			formatLines = 1,
+			formatPattern = {
+				"^[^:]+:(\\d+):(\\d+):\\s+(.*)$",
+				{
+					line = 1,
+					column = 2,
+					message = { 3 },
+				},
+			},
+			rootPatterns = { ".git" },
+		}),
 		diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
 			condition = function(utils)
