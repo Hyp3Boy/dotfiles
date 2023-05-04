@@ -51,6 +51,5 @@ keymap.set("n", "<leader>lq", "<cmd>VimtexQuickfixToggle<cr>") -- toggle quickfi
 keymap.set("n", "<leader>lL", "<cmd>VimtexLogToggle<cr>") -- toggle log window
 keymap.set("n", "<leader>lS", "<cmd>VimtexStop<cr>") -- stop compilation
 keymap.set("n", "<leader>lC", "<cmd>VimtexClean<cr>") -- clean auxiliary files
-keymap.set("n", "<leader>lR", "<cmd>VimtexCompileRec<cr>") -- compile recursively
 keymap.set("n", "<leader>lF", "<cmd>VimtexCompileForce<cr>") -- force compile
 keymap.set("n", "<leader>lI", "<cmd>VimtexInfo<cr>") -- show info
