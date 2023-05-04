@@ -31,9 +31,16 @@ return packer.startup(function(use)
 	-- blankline for nvim
 	use("lukas-reineke/indent-blankline.nvim")
 
-	--
+	use({
+		"VonHeikemen/fine-cmdline.nvim",
+		requires = {
+			{ "MunifTanjim/nui.nvim" },
+		},
+	}) -- better command line
 
 	use("Mofiqul/dracula.nvim") --colorscheme
+
+	use("cpea2506/one_monokai.nvim") --colorscheme
 
 	use("christoomey/vim-tmux-navigator") --tmux & split navigation
 

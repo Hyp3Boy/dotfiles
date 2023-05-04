@@ -53,3 +53,5 @@ keymap.set("n", "<leader>lS", "<cmd>VimtexStop<cr>") -- stop compilation
 keymap.set("n", "<leader>lC", "<cmd>VimtexClean<cr>") -- clean auxiliary files
 keymap.set("n", "<leader>lF", "<cmd>VimtexCompileForce<cr>") -- force compile
 keymap.set("n", "<leader>lI", "<cmd>VimtexInfo<cr>") -- show info
+-- Keymaps for better command line
+vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
