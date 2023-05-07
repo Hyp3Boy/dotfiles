@@ -36,3 +36,11 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
+
+-- disable autoindent
+vim.cmd([[
+  augroup disable_autoindent
+    autocmd!
+    autocmd FileType * setlocal indentexpr=
+  augroup END
+]])
