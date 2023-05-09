@@ -4,7 +4,7 @@ if not status then
 end
 
 -- get lualine dracula theme
-local lualine_dracula = require("lualine.themes.dracula")
+local lualine_dracula = require("lualine.themes.one_monokai")
 
 -- configure lualine with dracula theme
 lualine.setup({
