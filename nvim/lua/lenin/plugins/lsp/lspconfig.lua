@@ -65,7 +65,7 @@ lspconfig["texlab"].setup({
 })
 
 -- configure python server
-lspconfig["ruff_lsp"].setup({
+lspconfig["pylsp"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
