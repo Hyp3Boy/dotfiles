@@ -123,6 +123,9 @@ return packer.startup(function(use)
 	--VimTex
 	use("lervag/vimtex")
 
+	-- Custom Dashboard
+	use("glepnir/dashboard-nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

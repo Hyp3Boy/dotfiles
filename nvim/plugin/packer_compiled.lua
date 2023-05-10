@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/lenin.chavez/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["dashboard-nvim"] = {
+    loaded = true,
+    path = "/Users/lenin.chavez/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
+    url = "https://github.com/glepnir/dashboard-nvim"
+  },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/Users/lenin.chavez/.local/share/nvim/site/pack/packer/start/dracula.nvim",
