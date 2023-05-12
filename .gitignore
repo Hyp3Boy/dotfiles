@@ -5,3 +5,5 @@
 .cache/
 
 /github-copilot
+nvim/db_ui
+
