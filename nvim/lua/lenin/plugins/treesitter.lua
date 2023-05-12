@@ -18,6 +18,7 @@ treesitter.setup({
 	-- ensure these language parsers are installed
 	ensure_installed = {
 		"json",
+		"http",
 		"javascript",
 		"typescript",
 		"tsx",
@@ -35,6 +36,7 @@ treesitter.setup({
 		"dockerfile",
 		"gitignore",
 		"latex",
+		"sql",
 	},
 	-- auto install above language parsers
 	auto_install = true,

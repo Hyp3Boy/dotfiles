@@ -103,23 +103,36 @@ lspconfig["emmet_ls"].setup({
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
+-- configure rust-analyzer server
+lspconfig["rust_analyzer"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "rust" },
+	root_dir = lspconfig.util.root_pattern("Cargo.toml"),
+})
+
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings for lua
 		Lua = {
-			-- make the language server recognize "vim" global
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				-- make language server aware of runtime files
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.stdpath("config") .. "/lua"] = true,
-				},
+			globals = { "vim" },
+		},
+		workspace = {
+			-- make language server aware of runtime files
+			library = {
+				[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+				[vim.fn.stdpath("config") .. "/lua"] = true,
 			},
 		},
 	},
+})
+
+-- configure sqls server
+lspconfig["sqls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "sql" },
+	root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
 })

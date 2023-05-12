@@ -54,3 +54,10 @@ keymap.set("n", "<leader>lF", "<cmd>VimtexCompileForce<cr>") -- force compile
 keymap.set("n", "<leader>lI", "<cmd>VimtexInfo<cr>") -- show info
 --actualize packer
 keymap.set("n", "<leader>pa", "<cmd>PackerSync<cr>")
+-- database
+keymap.set("n", "<leader>db", "<cmd>DBUIToggle<cr>")
+keymap.set("n", "<leader>z", "<Plug>(DBUI_ExecuteQuery)")
+
+-- REST API
+-- keymap.set("n", "<leader>rq", '<cmd>lua require("rest-nvim").run()<CR>')
+keymap.set("n", "<leader>rq", "<Plug>RestNvim")

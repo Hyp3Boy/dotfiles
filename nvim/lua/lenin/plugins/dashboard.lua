@@ -65,7 +65,7 @@ db.setup({
 
 			--git status
 			{
-				icon = " ",
+				icon = " ",
 				desc = "Git Status          ",
 				key = "g",
 				keymap = "<leader>gs",
@@ -76,7 +76,7 @@ db.setup({
 
 			-- git commits
 			{
-				icon = " ",
+				icon = " ",
 				desc = "Git Commits          ",
 				key = "c",
 				keymap = "<leader>gc",
@@ -86,7 +86,7 @@ db.setup({
 			},
 			-- git commits for current file
 			{
-				icon = " ",
+				icon = " ",
 				desc = "Git Commits for current file          ",
 				key = "C",
 				keymap = "<leader>gfc",

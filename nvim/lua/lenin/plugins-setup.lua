@@ -126,6 +126,26 @@ return packer.startup(function(use)
 	-- Custom Dashboard
 	use("glepnir/dashboard-nvim")
 
+	-- Database
+	use({
+		"tpope/vim-dadbod",
+		opt = true,
+		requires = {
+			"kristijanhusak/vim-dadbod-ui",
+			-- 	"kristijanhusak/vim-dadbod-completion",
+		},
+		-- config = function()
+		-- 	require("lenin.plugins.dadbod").setup()
+		-- end,
+		cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+	})
+
+	-- Rest
+	use({
+		"rest-nvim/rest.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

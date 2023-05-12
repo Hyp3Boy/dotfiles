@@ -236,6 +236,11 @@ _G.packer_plugins = {
     path = "/Users/lenin.chavez/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["rest.nvim"] = {
+    loaded = true,
+    path = "/Users/lenin.chavez/.local/share/nvim/site/pack/packer/start/rest.nvim",
+    url = "https://github.com/rest-nvim/rest.nvim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/lenin.chavez/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -250,6 +255,24 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/lenin.chavez/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
+  },
+  ["vim-dadbod"] = {
+    after = { "vim-dadbod-ui" },
+    commands = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/lenin.chavez/.local/share/nvim/site/pack/packer/opt/vim-dadbod",
+    url = "https://github.com/tpope/vim-dadbod"
+  },
+  ["vim-dadbod-ui"] = {
+    load_after = {
+      ["vim-dadbod"] = true
+    },
+    loaded = false,
+    needs_bufread = true,
+    path = "/Users/lenin.chavez/.local/share/nvim/site/pack/packer/opt/vim-dadbod-ui",
+    url = "https://github.com/kristijanhusak/vim-dadbod-ui"
   },
   ["vim-maximizer"] = {
     loaded = true,
@@ -279,6 +302,53 @@ time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-ts-autotag ]]
 time([[Sequenced loading]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'DBUIToggle', function(cmdargs)
+          require('packer.load')({'vim-dadbod'}, { cmd = 'DBUIToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dadbod'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DBUIToggle ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'DBUI', function(cmdargs)
+          require('packer.load')({'vim-dadbod'}, { cmd = 'DBUI', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dadbod'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DBUI ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'DBUIAddConnection', function(cmdargs)
+          require('packer.load')({'vim-dadbod'}, { cmd = 'DBUIAddConnection', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dadbod'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DBUIAddConnection ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'DBUIFindBuffer', function(cmdargs)
+          require('packer.load')({'vim-dadbod'}, { cmd = 'DBUIFindBuffer', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dadbod'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DBUIFindBuffer ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'DBUIRenameBuffer', function(cmdargs)
+          require('packer.load')({'vim-dadbod'}, { cmd = 'DBUIRenameBuffer', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dadbod'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DBUIRenameBuffer ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'DBUILastQueryInfo', function(cmdargs)
+          require('packer.load')({'vim-dadbod'}, { cmd = 'DBUILastQueryInfo', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dadbod'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DBUILastQueryInfo ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
