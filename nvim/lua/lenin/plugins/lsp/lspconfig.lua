@@ -130,7 +130,7 @@ lspconfig["lua_ls"].setup({
 })
 
 -- configure sqls server
-lspconfig["sqls"].setup({
+lspconfig["sqlls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "sql" },

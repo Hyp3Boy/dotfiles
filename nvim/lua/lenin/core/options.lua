@@ -44,3 +44,8 @@ vim.cmd([[
     autocmd FileType * setlocal indentexpr=
   augroup END
 ]])
+-- diccionario español
+vim.cmd([[
+  set spelllang=es
+  set spell
+]])
