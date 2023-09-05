@@ -1,0 +1,98 @@
+# Window Settings:
+window:
+  dimensions:
+    columns: 140
+    lines: 38
+
+  position:
+    x: 200
+    y: 50
+
+  padding:
+    x: 0
+    y: 0
+
+  dynamic_padding: true
+  # Window decorations
+  #
+  # Available values:
+  # - `full`: Window with title bar and title bar buttons
+  # - `none`: Window without title bar, rounded corners, or drop shadow
+  # - `transparent`: Window with title bar with transparent background and title
+  #   bar buttons
+  # - `buttonless`: Window with title bar with transparent background and no
+  #   title bar buttons
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #     - buttonless: Title bar, transparent background and title bar buttons
+  #     - transparent: Title bar, transparent background, but no title bar buttons
+  decorations: buttonless
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Windowed
+
+  opacity: 1
+
+# Scrolling:
+scrolling:
+  history: 1000
+  multiplier: 3
+
+# Font: ttf-hack-nerd
+font:
+  normal:
+    family: FiraCode Nerd Font
+    style: Regular
+
+  bold:
+    family: FiraCode Nerd Font
+    style: Bold
+
+  italic:
+    family: FiraCode Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: FiraCode Nerd Font
+    style: Bold Italic
+
+  size: 17
+# Theme:
+import:
+  - ~/.config/alacritty/themes/themes/horizon-dark.yaml
+
+cursor:
+  # Cursor style
+  #
+  # Values for `style`:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: "Beam"
+  vi_mode_style: "Beam"
+
+theme: Soothing
+
+# Offset is the extra space around each character. offset.y can be thought of
+# as modifying the linespacing, and offset.x as modifying the letter spacing.
+offset:
+  x: 0
+  y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increase the x offset to move the glyph to
+  # the right, increase the y offset to move the glyph upward.test_test1
+glyph_offset:
+  x: 0
+  y: 0

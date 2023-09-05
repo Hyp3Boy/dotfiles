@@ -1,20 +1,21 @@
-require("lenin.plugins-setup")
-require("lenin.core.options")
-require("lenin.core.keymaps")
-require("lenin.core.colorscheme")
-require("lenin.plugins.comment")
-require("lenin.plugins.nvim-tree")
-require("lenin.plugins.lualine")
-require("lenin.plugins.telescope")
-require("lenin.plugins.nvim-cmp")
-require("lenin.plugins.lsp.mason")
-require("lenin.plugins.lsp.lspsaga")
-require("lenin.plugins.lsp.lspconfig")
-require("lenin.plugins.lsp.null-ls")
-require("lenin.plugins.indent-blankline")
-require("lenin.plugins.autopairs")
-require("lenin.plugins.treesitter")
-require("lenin.plugins.gitsigns")
-require("lenin.plugins.colorizer")
-require("lenin.plugins.vimtex")
-require("lenin.plugins.dashboard")
+for _, source in ipairs {
+  "astronvim.bootstrap",
+  "astronvim.options",
+  "astronvim.lazy",
+  "astronvim.autocmds",
+  "astronvim.mappings",
+} do
+  local status_ok, fault = pcall(require, source)
+  if not status_ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end
+end
+
+if astronvim.default_colorscheme then
+  if not pcall(vim.cmd.colorscheme, astronvim.default_colorscheme) then
+    require("astronvim.utils").notify(
+      "Error setting up colorscheme: " .. astronvim.default_colorscheme,
+      vim.log.levels.ERROR
+    )
+  end
+end
+
+require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
